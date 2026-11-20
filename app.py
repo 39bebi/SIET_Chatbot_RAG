@@ -4,7 +4,7 @@ st.set_page_config(page_title ="SIET_Chatbot",layout="centered")
 st.title("Shridevi Institute of Engineering and Technology - Smart Chatbot")
 st.caption("Ask anything about college information.")
 st.caption("Created by Baby")
-mykey = st.secrets["GROQ_API"]
+my_key = st.secrets["GROQ_API"]
 @st.cache_resource
 def initiate_rag():
   return load_base("01_College_Information.pdf")
@@ -29,7 +29,7 @@ if question:
 
   with st.chat_message("assistant"):
     with st.spinner("Asking RAG for answer..."):
-      answer = ask_rag (question,embed_model,chunks, index,api_key = mykey)
+      answer = ask_rag (question,embed_model,chunks, index,api_key = my_key)
       st.write(answer)
     st.session_start.chat_hist.append(
     {"role" : "assistant", "content" : question})

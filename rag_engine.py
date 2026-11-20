@@ -18,7 +18,7 @@ def create_chunks(full_text, chunksize = 500, overlap =100):
   chunks=[]
   start =0
   while start<len(full_text):
-    end = strat +chunksize
+    end = start +chunksize
     chunk = full_text[start:end]
     if chunk.strip():
       chunks.append(chunk)

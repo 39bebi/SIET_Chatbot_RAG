@@ -71,7 +71,7 @@ def ask_rag(question, embed_model,chunks, index,api_key, num_chunks=3,model_name
   Document Background :""" + background + "User Question" + question + "Answer:"
   client = Groq(api_key = key)
   req1 = client.chat.completions.create(
-    model = model_name,
+    model ="qwen/qwen3.8-27b",
     messages= [{"role" : "user","content":prompt}],
                 temperature = 0.3,
   )

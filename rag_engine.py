@@ -70,9 +70,9 @@ def ask_rag(question, embed_model,chunks, index,api_key, num_chunks=3,model_name
   If information not available, simply say Information Missing.
   Document Background :""" + background + "User Question" + question + "Answer:"
   client = Groq(api_key = key)
-  req = client.chat.completions.create(
+  req1 = client.chat.completions.create(
     model = model_name,
     messages= [{"role" : "user","content":prompt}],
                 temperature = 0.3,
   )
-  return req.choices[0].message.content
+  return req1.choices[0].message.content
